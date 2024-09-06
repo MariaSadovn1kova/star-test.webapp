@@ -1,0 +1,1 @@
+import{d as t,u as n,c as s,a,t as o,b as r,o as c}from"./index-DM-edanv.js";const _=t({__name:"HomeView",setup(i){const{t:e}=n();return(l,p)=>(c(),s("main",null,[a("div",null,o(r(e)("btns.report_settings")),1)]))}});export{_ as default};
