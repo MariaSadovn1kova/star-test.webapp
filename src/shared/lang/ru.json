@@ -1,4 +1,10 @@
 {
+  "pages": {
+    "my_warehouse": "Мой склад"
+  },
+  "sidebar": {
+    "partner_program": "Партнерская программа"
+  },
   "btns": {
     "report_settings": "Настройкии отчета"
   }
