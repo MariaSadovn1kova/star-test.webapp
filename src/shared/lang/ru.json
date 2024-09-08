@@ -10,6 +10,19 @@
   },
   "warehouse": {
     "products": "Товары:"
-    
+  },
+  "warehouse-table": {
+    "product": "Товар",
+    "size_range": "Размерный ряд",
+    "orders_speed": "Скорость заказов",
+    "on_the_way": "В пути от производителя",
+    "change_hidtory": "История изменения",
+    "warehouse_enough": "Хватит на складе",
+    "remains_WB": "Остаток на WB",
+    "remains_provider": "Остаток у поставщика",
+    "remains_warehouse": "Остаток мой склад",
+    "remains_all": "Остаток всего",
+    "size": "Размер",
+    "enough_for": "Хватит на"
   }
 }

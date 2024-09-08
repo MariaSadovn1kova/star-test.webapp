@@ -38,12 +38,12 @@ const route = useRoute().name as string;
 <style scoped lang="postcss">
 .app-wrapper {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
 }
 
 .app-content {
-  padding: 24px 39px 24px 41px;
+  padding: 24px 39px 24px 281px;
   flex-grow: 1;
 
   display: flex;

@@ -15,7 +15,6 @@ const props = defineProps<IProps>();
       v-if="iconName" 
       :name="iconName"
     />
-
     <span class="stat-button__text">{{ text }}</span>
   </button>
 </template>
@@ -40,7 +39,6 @@ const props = defineProps<IProps>();
 }
 
 .stat-button__text {
-  margin-top: 1px;
   line-height: 20px; 
   vertical-align: middle;
 }

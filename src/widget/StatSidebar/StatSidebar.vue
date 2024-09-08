@@ -21,6 +21,7 @@ import {
   width: 240px;
   height: 100vh;
   padding-bottom: 24px;
+  position: fixed;
 
   display: flex;
   flex-direction: column;
