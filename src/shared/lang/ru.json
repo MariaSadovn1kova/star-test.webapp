@@ -1,11 +1,15 @@
 {
   "pages": {
-    "my_warehouse": "Мой склад"
+    "my-warehouse": "Мой склад"
   },
   "sidebar": {
     "partner_program": "Партнерская программа"
   },
   "btns": {
-    "report_settings": "Настройкии отчета"
+    "report_settings": "Настройки отчета"
+  },
+  "warehouse": {
+    "products": "Товары:"
+    
   }
 }

@@ -22,7 +22,9 @@ const props = defineProps<IProps>();
         :name="iconName"
       />
     </div>
-    <p>{{ label }}</p>
+    <div class="navigation-btn__text">
+      <span>{{ label }}</span>
+    </div>
   </RouterLink>
 
 </template>
@@ -46,5 +48,10 @@ const props = defineProps<IProps>();
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.navigation-btn__text {
+  display: flex;
+  align-items: end;
 }
 </style>

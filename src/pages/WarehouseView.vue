@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
+
+import { StatWarehouseTable } from '@/widget';
+
 const { t } = useI18n();
 </script>
 
 <template>
-  <main>
-    <div>{{ t('btns.report_settings') }}</div>
-  </main>
+  <div>
+    <StatWarehouseTable />
+  </div>
 </template>

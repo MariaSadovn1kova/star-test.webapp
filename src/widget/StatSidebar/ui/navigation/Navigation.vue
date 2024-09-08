@@ -13,7 +13,7 @@ const { t } = useI18n();
 const sidebarRouts: IRout[] = [
   {
     path: '/',
-    label: t('pages.my_warehouse'),
+    label: t('pages.my-warehouse'),
     iconName: 'my-warehouse-icon'
   }
 ]

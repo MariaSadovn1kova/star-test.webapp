@@ -11,7 +11,7 @@ const router = createRouter({
         {
           name: 'my-warehouse',
           path: '',
-          component: () => import('@/pages/HomeView.vue'),
+          component: () => import('@/pages/WarehouseView.vue'),
           meta: { navbar: 'myTasks' },
         }
       ]
