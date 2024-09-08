@@ -1,1 +1,0 @@
-import{d as t,g as n,e as s,h as a,t as o,u as r,o as c}from"./index-DBfM6qeY.js";const _=t({__name:"HomeView",setup(i){const{t:e}=n();return(l,p)=>(c(),s("main",null,[a("div",null,o(r(e)("btns.report_settings")),1)]))}});export{_ as default};
