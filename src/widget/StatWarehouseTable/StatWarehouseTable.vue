@@ -29,6 +29,8 @@ const props = defineProps<IProps>();
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  color: var(--color-table-text);
 }
 
 .stat-warehouse-table__content {

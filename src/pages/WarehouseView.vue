@@ -17,7 +17,7 @@ onMounted(warehouseStore.fetchWarehouse);
 
 <template>
   <div class="warehouse">
-    <p class="warehouse__title">Товары: {{ totalCount }} шт.  </p>
+    <p class="warehouse__title">Товары: <span>{{ totalCount }} шт.</span></p>
     <StatWarehouseTable 
       :table-items="wareHouseItems"
     />
@@ -33,6 +33,11 @@ onMounted(warehouseStore.fetchWarehouse);
 
 .warehouse__title {
   font-size: 18px;
+  font-family: 'Lato-Semibold';
+
+  span {
+    color: var(--color-warehouse-title-count);
+  }
 }
 </style>
 

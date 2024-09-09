@@ -1,9 +1,13 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import { HeaderDefaultItem } from './ui';
+import { StatSvgLoader, StatCountInput } from "@/shared";
 
 const { t } = useI18n();
+
+const defaultInterval = ref(7);
 
 interface IDefaultItem {
   title: string
@@ -36,8 +40,16 @@ const headerDefaultItems: IDefaultItem[] = [
       :with-tip="headerItem.withTip"
     />
 
-    <div class="header__item">
-      <span> {{ t('warehouse-table.orders_speed') }} </span>
+    <div class="header__item--column">
+      <div class="header__item-row">
+        <span> {{ t('warehouse-table.orders_speed') }} </span>
+        <StatSvgLoader name="filter"/>
+      </div>
+      <div class="header__item-row">
+        <span> {{ t('warehouse-table.behind') }} </span>
+        <StatCountInput v-model="defaultInterval" unit="дней"/>
+        <StatSvgLoader name="tip"/>
+      </div>
     </div>
 
     <div class="header__item">
@@ -60,6 +72,7 @@ const headerDefaultItems: IDefaultItem[] = [
   background: var(--color-warehouse-table-header);
   border-radius: 4px;
 
+  font-family: 'Lato-Ligth';
   font-size: 13px;
   color: var(--color-warehouse-table-header-text);
 }
@@ -71,5 +84,15 @@ const headerDefaultItems: IDefaultItem[] = [
   span {
     line-height: 18px;
   }
+}
+
+.header__item-row {
+  display: flex;
+  gap: 4px;
+}
+
+.header__item-row--column {
+  display: flex;
+  flex-direction: column;
 }
 </style>

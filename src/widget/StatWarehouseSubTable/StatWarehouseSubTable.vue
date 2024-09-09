@@ -2,7 +2,7 @@
 import { useI18n } from 'vue-i18n';
 
 import type { ISizeRange } from '@/shared';
-import { StatSvgLoader, StatChip } from "@/shared";
+import { StatSvgLoader, StatChip, StatSubButton } from "@/shared";
 
 interface IProps {
   items: ISizeRange[]
@@ -30,11 +30,6 @@ const subTableHeaderItems: string[] = [
 <template>
 
   <div class="sub-table">
-   
-    <div class="sub-table__title">
-      <StatSvgLoader name="size_range"/>
-      <span>{{ t('warehouse-table.size_range') }}</span>
-    </div>
 
     <div class="sub-table__head">
       <div
@@ -93,7 +88,7 @@ const subTableHeaderItems: string[] = [
       </div>
 
       <div class="sub-table__row-item">
-        <span>{{ item.remainsWB }}</span>
+        <StatSubButton :text="t('btns.watch')"/>
       </div>
 
     </div>
@@ -104,21 +99,7 @@ const subTableHeaderItems: string[] = [
 
 <style scoped lang="postcss">
 .sub-table {
-  padding: 12px 24px;
 
-  background: var(--color-subtable-background);
-  border-left: 4px solid var(--color-subtable-border);
-  border-radius: 4px;
-}
-
-.sub-table__title {
-  height: 48px;
-
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  font-size: 12px;
 }
 
 .sub-table__head {

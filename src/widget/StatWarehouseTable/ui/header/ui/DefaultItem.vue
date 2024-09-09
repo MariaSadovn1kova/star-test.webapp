@@ -52,7 +52,7 @@ const { t } = useI18n();
 }
 
 .default-item__row {
-  height: 20px;
+  height: 22px;
 
   display: flex;
   align-items: center;

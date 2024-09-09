@@ -6,7 +6,8 @@
     "partner_program": "Партнерская программа"
   },
   "btns": {
-    "report_settings": "Настройки отчета"
+    "report_settings": "Настройки отчета",
+    "watch": "Посмотреть"
   },
   "warehouse": {
     "products": "Товары:"
@@ -23,6 +24,8 @@
     "remains_warehouse": "Остаток мой склад",
     "remains_all": "Остаток всего",
     "size": "Размер",
-    "enough_for": "Хватит на"
+    "enough_for": "Хватит на",
+    "article": "Артикул на WB:",
+    "behind": "за"
   }
 }

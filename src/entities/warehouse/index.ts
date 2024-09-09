@@ -19,7 +19,7 @@ export const useWarehouseStore = defineStore('warehouse', {
       this.warehouseItems = [
         {
           id: '1',
-          img: 'https://static.tvtropes.org/pmwiki/pub/images/horrific_necktie.png',
+          img: 'https://app2top.ru/wp-content/uploads/2022/11/disco-zaum.jpg',
           title: 'Долговечный букет из 9 роз в коробке, в подарок — вечные стабилизированная подставка.',
           articleWB: '9619790',
           remainsWB: 55475,
@@ -31,7 +31,7 @@ export const useWarehouseStore = defineStore('warehouse', {
         },
         {
           id: '2',
-          img: 'https://static.tvtropes.org/pmwiki/pub/images/horrific_necktie.png',
+          img: 'https://app2top.ru/wp-content/uploads/2022/11/disco-zaum.jpg',
           title: 'Долговечный букет из 9 роз в коробке, в подарок — вечные стабилизированная подставка.',
           articleWB: '9619790',
           remainsWB: 55475,

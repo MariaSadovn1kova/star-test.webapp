@@ -1,5 +1,7 @@
-import StatSubTable from './SubTable/SubTable.vue';
+import StatSubTableContainer from './Container.vue';
+import StatSubTableCountChip from './CountChip.vue';
 
 export {
-  StatSubTable
+  StatSubTableContainer,
+  StatSubTableCountChip
 }
