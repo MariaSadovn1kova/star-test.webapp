@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import type { ISizeRange } from '@/shared';
-import { StatSvgLoader, StatChip, StatSubButton } from "@/shared";
+import { StatSvgLoader, StatChip, StatSubButton, StatCountInput } from "@/shared";
 
 interface IProps {
   items: ISizeRange[]
@@ -11,6 +12,8 @@ interface IProps {
 const props = defineProps<IProps>();
 
 const { t } = useI18n();
+
+const defaultInterval = ref('2 дня');
 
 const subTableHeaderItems: string[] = [
   t('warehouse-table.size'),
@@ -21,10 +24,15 @@ const subTableHeaderItems: string[] = [
   t('warehouse-table.remains_warehouse'),
   t('warehouse-table.enough_for'),
   t('warehouse-table.remains_all'),
+  t('warehouse-table.enough_for'),
   t('warehouse-table.on_the_way'),
   t('warehouse-table.orders_speed'),
   t('warehouse-table.change_hidtory'),
 ]
+
+const countFormat = (num: number, unit: string):string => {
+  return `${num}  ${unit}`
+}
 </script>
 
 <template>
@@ -43,7 +51,7 @@ const subTableHeaderItems: string[] = [
 
     <div
       class="sub-table__row"
-      v-for="item in items"
+      v-for="item in items" 
       :key="item.id"
     >
 
@@ -52,39 +60,49 @@ const subTableHeaderItems: string[] = [
       </div>
 
       <div class="sub-table__row-item">
-        <span>{{ item.remainsWB }}</span>
+        <span>{{ countFormat(item.remainsWB, 'шт.') }}</span>
       </div>
 
       <div class="sub-table__row-item">
-        <span>{{ item.remainsWB }}</span>
+        <span>{{ defaultInterval }}</span>
       </div>
 
       <div class="sub-table__row-item">
-        <span>{{ item.remainsWB }}</span>
+        <span>{{ countFormat(item.remainsProvider, 'шт.') }}</span>
       </div>
 
       <div class="sub-table__row-item">
-        <span>{{ item.remainsWB }}</span>
+        <span>{{ defaultInterval }}</span>
       </div>
 
       <div class="sub-table__row-item">
-        <span>{{ item.remainsWB }}</span>
+        <StatCountInput 
+          v-model="item.remainsWarehouse"
+          unit="шт."
+        />
       </div>
 
       <div class="sub-table__row-item">
-        <span>{{ item.remainsWB }}</span>
+        <span>{{ defaultInterval }}</span>
       </div>
 
       <div class="sub-table__row-item">
-        <span>{{ item.remainsWB }}</span>
+        <span>{{ countFormat(item.remainsAll, 'шт.') }}</span>
       </div>
 
       <div class="sub-table__row-item">
-        <span>{{ item.remainsWB }}</span>
+        <span>{{ defaultInterval }}</span>
       </div>
 
       <div class="sub-table__row-item">
-        <span>{{ item.remainsWB }}</span>
+        <StatCountInput 
+          v-model="item.onTheWay"
+          unit="шт."
+        />
+      </div>
+
+      <div class="sub-table__row-item">
+        <span>{{ countFormat(5, 'шт. / день') }}</span>
       </div>
 
       <div class="sub-table__row-item">
@@ -106,7 +124,7 @@ const subTableHeaderItems: string[] = [
   height: 48px;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 
   color: var(--color-subtable-head-text);
   font-size: 12px;
@@ -127,7 +145,7 @@ const subTableHeaderItems: string[] = [
   height: 48px;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 
   background: var(--color-subtable-item-background);
   border-bottom: 1px solid var(--color-subtable-item-border);

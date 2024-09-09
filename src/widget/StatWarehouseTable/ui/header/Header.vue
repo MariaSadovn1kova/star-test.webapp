@@ -47,7 +47,7 @@ const headerDefaultItems: IDefaultItem[] = [
       </div>
       <div class="header__item-row">
         <span> {{ t('warehouse-table.behind') }} </span>
-        <StatCountInput v-model="defaultInterval" unit="дней"/>
+        <StatCountInput v-model="defaultInterval" unit="дней" for-header/>
         <StatSvgLoader name="tip"/>
       </div>
     </div>

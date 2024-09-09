@@ -8,6 +8,7 @@ import { StatInputButton } from './ui';
 interface IProps {
   modelValue: number
   unit: string
+  forHeader?: boolean
 }
 
 const props = defineProps<IProps>();
@@ -37,6 +38,7 @@ const placeholder = computed<string>(() => `${numberFormatting(props.modelValue)
 <template>
   <div 
     class="stat-count-input"
+    :style="forHeader ? 'padding: 0px 4px' : 'padding: 0px'"
     @click="activateInput"
     v-on-click-outside="deactivateInput"
   >
@@ -78,7 +80,6 @@ const placeholder = computed<string>(() => `${numberFormatting(props.modelValue)
 .stat-count-input {
   height: 20px;
   padding: 0px 4px;
-
   border-radius: 4px;
   background: var(--color-count-input-background);
 
@@ -88,8 +89,10 @@ const placeholder = computed<string>(() => `${numberFormatting(props.modelValue)
 .stat-count-input__input {
   display: flex;
   gap: 6px;
+  align-items: center;
 
   input {
+    height: 16px;
     max-width: 45px;
     padding: 0;
 
@@ -110,6 +113,9 @@ const placeholder = computed<string>(() => `${numberFormatting(props.modelValue)
 }
 
 .stat-count-input__placeholder {
+  display: inline-block;
+  height: 18px;
+
   color: var(--color-count-input);
   border-bottom: 1px dotted var(--color-count-input);
   cursor: pointer;
