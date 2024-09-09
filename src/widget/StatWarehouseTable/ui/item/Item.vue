@@ -65,7 +65,7 @@ const remainsWarehouse = computed<string>(() => `${ numberFormatting(props.item.
       
       <div class="item__grid-cell">
         <StatCountInput 
-          v-if="!item.sizeRange"
+          v-if="!isActive"
           v-model="item.remainsWarehouse"
           unit="шт."
         />
@@ -95,7 +95,7 @@ const remainsWarehouse = computed<string>(() => `${ numberFormatting(props.item.
 
       <div class="item__grid-cell--last">
         <StatSubButton 
-          v-if="!item.sizeRange"
+          v-if="!isActive"
           :text="t('btns.watch')" 
         />
       </div>
@@ -114,7 +114,7 @@ const remainsWarehouse = computed<string>(() => `${ numberFormatting(props.item.
         <span>{{ t(`warehouse-table.size_range`) }}</span>
         <StatSvgLoader
           name="toggle"
-          :style="isActive ? 'transform: rotate(180deg); transition-duration: 0.5s' : 'transform: rotate(0deg); transition-duration: 0.5s'"
+          :style="isActive ? 'transform: rotate(0deg); transition-duration: 0.5s' : 'transform: rotate(180deg); transition-duration: 0.5s'"
         />
       </button>
 
@@ -152,6 +152,10 @@ const remainsWarehouse = computed<string>(() => `${ numberFormatting(props.item.
   display: flex;
   flex-direction: column;
   gap: 2px;
+
+  span {
+    line-height: 20px;
+  }
 }
 
 .item__grid-cell--first {
